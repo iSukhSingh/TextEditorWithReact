@@ -29,20 +29,33 @@ const handleCopy = () => {
     text.select();
     navigator.clipboard.writeText(text.value);
 }
+ const handleExtraSpaces = () => {
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+        props.showAlert("Extra spaces removed!", "success");
+    }
+    const handleSpaces = () => {
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(""));
+        props.showAlert("Extra spaces removed!", "success");
+    }
 
 
   return (
     <>
-    <div>
-      <h1>{props.heading}</h1>
-      <div class="mb-3">
-        <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
-      </div>
+ <div className="container" style={{color: props.mode==='dark'?'white':'#042743'}}> 
+            <h1>{props.heading}</h1>
+            <div className="mb-3"> 
+            <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'#042743'}} id="myBox" rows="8"></textarea>
+            </div>
+      <button className="btn btn-primary mx-2" onClick={handleUpClick}>Uppercase</button>
+      <button className="btn btn-primary my-3 mx-2" onClick={handleDownClick}>Lowercase</button>
+      <button className="btn btn-info my-3 mx-2" onClick={handleCopy}>Copy</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+      <button disabled={text.length===0} className="btn btn-warning mx-1 my-1" onClick={handleSpaces}>Remove All Spaces</button>
+      {/* //remove text below thisi */}
+      <button className="btn btn-danger my-3 mx-2" onClick={clearText}>clear</button>
       
-      <button className="btn btn-primary mx-2" onClick={handleUpClick}>Covert to Uppercase</button>
-      <button className="btn btn-primary my-3 mx-2" onClick={handleDownClick}>Covert to Lowercase</button>
-      <button className="btn btn-info my-3 mx-2" onClick={handleCopy}>Copy your text</button>
-      <button className="btn btn-danger my-3 mx-2" onClick={clearText}>clear Text</button>
 
     </div>
     <div className='container my-3'>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function About() {
+export default function About(props) {
 
 const[myStyle, setMyStyle] = useState({
     color: 'black',
@@ -27,12 +27,13 @@ const toogleStyle = () => {
 }
   return (
     <>
- <div className='container' style={myStyle}>
+    
+ <div className='container' style={{color: props.mode==='dark'?'black':'#042743'}}>
     <h1>about us</h1>
         <div className='container' id="accordionExample">
       <div className='accordion-item'>
         <h2 className="accordion-header" id="headingOne">
-          <button style={myStyle} className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button style={{color: props.mode==='dark'?'black':'#042743'}} className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
             Accordion Item #1
           </button>
         </h2>
