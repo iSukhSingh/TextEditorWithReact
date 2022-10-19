@@ -24,6 +24,11 @@ const handleOnChange = (event) => {
     console.log("On change");
     setText(event.target.value);
 }
+const handleCopy = () => {
+    var text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+}
 
 
   return (
@@ -36,7 +41,8 @@ const handleOnChange = (event) => {
       
       <button className="btn btn-primary mx-2" onClick={handleUpClick}>Covert to Uppercase</button>
       <button className="btn btn-primary my-3 mx-2" onClick={handleDownClick}>Covert to Lowercase</button>
-      <button className="btn btn-primary my-3 mx-2" onClick={clearText}>clear Text</button>
+      <button className="btn btn-info my-3 mx-2" onClick={handleCopy}>Copy your text</button>
+      <button className="btn btn-danger my-3 mx-2" onClick={clearText}>clear Text</button>
 
     </div>
     <div className='container my-3'>
