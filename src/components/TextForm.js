@@ -8,26 +8,35 @@ export default function TextForm(props) {
     console.log("Uppercase was clicked");
     let newText = text.toLocaleUpperCase();
     setText(newText)
+   props.showAlert("Converted to UpperCase", "success");
+
+    
 }
 const handleDownClick = () => {
     console.log("lowercase was clicked");
     let newText = text.toLocaleLowerCase();
     setText(newText)
+   props.showAlert("Converted to LowerCase", "success");
+
 }
 const clearText = () => {
     console.log("lowercase was clicked");
     let newText = ("");
     setText(newText)
+   props.showAlert("Cleared the Text Box", "success");
+
 }
 
 const handleOnChange = (event) => {
     console.log("On change");
     setText(event.target.value);
+    
 }
 const handleCopy = () => {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+   props.showAlert("Text copied to ClipBoard", "success");
 }
  const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
@@ -37,7 +46,7 @@ const handleCopy = () => {
     const handleSpaces = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(""));
-        props.showAlert("Extra spaces removed!", "success");
+        props.showAlert("Removed all the spaces", "success");
     }
 
 
@@ -63,6 +72,8 @@ const handleCopy = () => {
     <p1>You have used {text.split(" ").length-1} words</p1>
     <p>You have used {text.length} letters</p>
     <p>it will take about {0.008 * text.split(" ").length} minutes to read</p>
+    <h2>Preview</h2>
+            <p>{text.length>0?text:"Nothing to preview!"}</p>
   </div>
     </>
 
