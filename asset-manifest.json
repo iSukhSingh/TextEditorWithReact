@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/rectApp/static/css/main.073c9b0a.css",
-    "main.js": "/rectApp/static/js/main.f97be85b.js",
-    "static/js/787.b701888c.chunk.js": "/rectApp/static/js/787.b701888c.chunk.js",
-    "index.html": "/rectApp/index.html",
-    "main.073c9b0a.css.map": "/rectApp/static/css/main.073c9b0a.css.map",
-    "main.f97be85b.js.map": "/rectApp/static/js/main.f97be85b.js.map",
-    "787.b701888c.chunk.js.map": "/rectApp/static/js/787.b701888c.chunk.js.map"
+    "main.css": "/TextEditorWithReact/static/css/main.073c9b0a.css",
+    "main.js": "/TextEditorWithReact/static/js/main.a914d883.js",
+    "static/js/787.b701888c.chunk.js": "/TextEditorWithReact/static/js/787.b701888c.chunk.js",
+    "static/media/2.png": "/TextEditorWithReact/static/media/2.f93e062a1dd7f7d5ecc8.png",
+    "index.html": "/TextEditorWithReact/index.html",
+    "main.073c9b0a.css.map": "/TextEditorWithReact/static/css/main.073c9b0a.css.map",
+    "main.a914d883.js.map": "/TextEditorWithReact/static/js/main.a914d883.js.map",
+    "787.b701888c.chunk.js.map": "/TextEditorWithReact/static/js/787.b701888c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.f97be85b.js"
+    "static/js/main.a914d883.js"
   ]
 }
